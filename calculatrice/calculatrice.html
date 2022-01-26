@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Calculatrice</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+<table>
+    <tr>
+        <td colspan="3" id="output"><div>0</div></td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="add('7')">7</button></td>
+        <td><button type="button" onclick="add('8')">8</button></td>
+        <td><button type="button" onclick="add('9')">9</button></td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="add('4')">4</button></td>
+        <td><button type="button" onclick="add('5')">5</button></td>
+        <td><button type="button" onclick="add('6')">6</button></td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="add('1')">1</button></td>
+        <td><button type="button" onclick="add('2')">2</button></td>
+        <td><button type="button" onclick="add('3')">3</button></td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="add('(')">(</button></td>
+        <td><button type="button" onclick="add('0')">0</button></td>
+        <td><button type="button" onclick="add(')')">)</button></td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="add('-')">-</button></td>
+        <td><button type="button" onclick="add('/')">/</button></td>
+        <td><button type="button" onclick="add('*')">*</button></td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="add('+')">+</button></td>
+        <td class="end"><button type="button" onclick="remove()"><-X</button> <button type="button" onclick="reset()">CE</button></td>
+        <td><button type="button" onclick="calculer()">=</button></td>
+    </tr>
+</table>
+
+
+<script type="text/javascript">
+    //element, c'est le div ou sont marqués les résultats.
+    let element = document.getElementsByTagName("div")[0];
+    let stack = [];
+
+    //L'utilité du flag est de savoir si on a appuyé sur "égal" juste avant ou pas.
+    //Si oui, alors on va soit tout réinitialiser si on appuyé sur un nouveau chiffre
+    //Soit ajouter juste la nouvelle opération si on commencé par une opérande (*, +, - , /)
+    //C'est bien sûr optionel, mais c'est comme ça que les calculatrices modernes fontionnent.
+    let flag= false;
+
+    function add(character) {
+
+        operande=["*","/","-","+"];
+        if (flag==true && (character in operande)) {
+            //Si on a pas d'opération après avoir fait un total, on réinititalise.
+            flag= false;
+            element.innerText=character;
+        } else {
+            if (element.innerText=="0") {
+                //ça c'est pour écraser le 0 qu'on a par défaut.
+                element.innerText=character;
+            } else {
+                //le cas normal c'est ici.
+                element.innerText+= character;
+            }
+        }
+        //On ajoute l'opération au stack pour revenir en arrière si besoin.
+        stack.push(element.innerText);
+    }
+
+
+    function remove() {
+        // J'ai volontairement choisi d'implémenter un retour en arrière
+        // Au lieu d'une fonction qui ne fait que supprimer le dernier character.
+        // J'ai trouvé que c'était plus utile, et ça a été un meilleur challenge.
+        stack.pop();
+        if (stack.length==0) {
+            element.innerText=0;
+        } else {
+            element.innerText=stack.pop();
+        }
+        stack.push(element.innerText);
+
+    }
+    function reset() {
+        stack.push(element.innerText);
+        element.innerText=0;
+    }
+
+    function calculer() {
+
+        try {
+            let resultat = eval(element.innerText);
+            if (resultat=== Infinity ) {
+                alert("Erreur : Division par zéro.");
+                reset();
+            } else {
+                element.innerText= resultat;
+                flag=true;
+            }
+        }
+        catch {
+            alert("Erreur de syntax.");
+            reset();
+        }
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+/* 
+Etant donné que ma page CSS est beaucoup plus longue que la norme.
+J'ai décidé de séparer le CSS du code pour plus de clarté.
+*/ 
+
+
+body {
+    max-width: 600px;
+    margin: auto;
+    padding-top: 2%;
+}
+td {
+    min-width: 175px;
+    height: 75px;
+    border: 4px solid lightblue;
+}
+table {
+    text-align: center;
+    border-spacing: 0px;
+    background-color : lightgrey;
+    border: 4px solid #000000;
+    border-radius: 10px;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+#output {
+    background-color: lightblue;
+    margin-bottom: 15px;
+    height: 100px;
+    text-align: -webkit-center;
+}
+div {
+    width: 95%;
+    height: 85%;
+    border: 3px solid black;
+    border-radius: 5px;     
+    background-color: #e3f8ff;
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    padding-left: 3px;
+}
+
+button {
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+    border: 2px solid black;
+}
+.end{
+    width: 50%;
+    display: flex;
+}
