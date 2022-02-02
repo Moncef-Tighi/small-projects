@@ -505,6 +505,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: auto;
   margin-right: auto;
 }
+.mt-10 {
+  margin-top: 2.5rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -516,6 +519,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
-.p-2 {
-  padding: 0.5rem;
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.text-center {
+  text-align: center;
 }
