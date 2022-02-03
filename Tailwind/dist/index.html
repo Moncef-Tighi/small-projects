@@ -14,11 +14,11 @@
             <section id="header">
                 <div class=" text-center">
                     <h1 class="mb-1 text-main">Tom Gonzales coach professisonnel <br> I'll get you in shape!</h1>
-                    <h2>Musculation • Entrainement • Conseil alimentaires</h2>
+                    <h2 class="md:text-3xl sm:text-2xl">Musculation • Entrainement • Conseil alimentaires</h2>
                 </div>    
             </section>
 
-            <section id="image_services" class=" mt-10 grid grid-cols-2 gap-14">
+            <section id="image_services" class=" mt-10 grid grid-cols-2 md:gap-14 sm:gap-6">
                 <div id = "image" class=" ml-auto">
                     <img src = "./images/tom.jpg" alt = "Tom Gonzales Entrainement en ligne">
                 </div>
@@ -31,17 +31,27 @@
                         <li>Réduction de douleuers musculaires</li>
                         <li>Prograrmme alimentaires adapté à vos besoins</li>
                     </ul>
-                    <h3>Mes compétences :</h3>
+                    <div class=" hidden md:block">
+                        <h3>Mes compétences :</h3>
                         <ul class=" list-disc list-inside ml-6">
                             <li>Nutrisionite</li>
                             <li>Coach fitness</li>
                             <li>5 ans d'expérience en coaching</li>
                         </ul>
+                    </div>
                 </div>
+                
             </section>
-
+                <section class="md:hidden mt-6 ml-2">
+                    <h3>Mes compétences :</h3>
+                    <ul class=" list-disc list-inside ml-6">
+                        <li class=" md:leading-5">Nutrisionite</li>
+                        <li class=" md:leading-5">Coach fitness</li>
+                        <li class=" md:leading-5">5 ans d'expérience en coaching</li>
+                    </ul>
+                </section>
             <section id="price_payment" class=" mt-8">
-                <div class="w-2/3 mx-auto">
+                <div class="md:w-2/3 mx-auto">
                     <h2>tarifs</h2>
                     <p>Mon objectif principal est e vous motiver pour accomplir vos objectifs.</p>
                     <p>Nous discuterons de mes tarifs après une première session gratuite ou vous pourez juger par vous même de l'utilité de mon programme</p>
@@ -49,11 +59,11 @@
             </section>
 
             <section class=" mt-8 mb-10" id = "contact">
-                <div class=" grid grid-cols-2 gap-4 w-2/3 mx-auto">
+                <div class=" grid grid-cols-2 gap-4 md:w-2/3 mx-auto">
                     <div id = "email">
                         <p>Votre message:</p>
                         <a class='flex justify-center w-3/4 mt-2 items-center bg-gray-300 border-solid border-black border-0 px-4 py-2 rounded shadow-md 
-                        transition hover:bg-gray-400 hover:shadow-none focus:ring-2 focus:ring-main' href="#">
+                        transition hover:bg-gray-400 hover:shadow-none focus:ring-2 focus:ring-main text-xl' href="#">
                         <svg class="h-4 mr-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg>
                             m'envoyer un email
                         </a>

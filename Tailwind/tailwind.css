@@ -5,20 +5,20 @@
 
 @layer base {
     h1 {
-        @apply text-5xl mb-5  font-headline;
+        @apply text-5xl mb-5 font-bold font-headline;
     }
     h2 {
-        @apply text-4xl mb-3  font-headline;
+        @apply text-4xl mb-3 font-semibold font-headline;
     }
     h3 {
-        @apply text-3xl mb-2  font-headline;
+        @apply text-3xl mb-2 font-semibold font-headline;
     }
     @font-face {
         font-family: Oswald;
         src: url(/dist/fonts/Oswald/Oswald-Bold.tff);
     }
     li {
-        @apply mb-3 text-xl;
+        @apply mb-3 text-xl md:text-lg;
     }
     p {
         @apply text-lg
