@@ -20,4 +20,7 @@
     li {
         @apply mb-3 text-xl;
     }
+    p {
+        @apply text-lg
+    }
 }
