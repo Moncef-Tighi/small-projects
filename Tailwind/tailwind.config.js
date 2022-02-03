@@ -4,7 +4,10 @@ module.exports = {
     extend: {
       fontFamily : {
         headline: ['Oswald']
-      }
+      },
+      colors : {
+        main: '#212f49'
+      },
     },
     debugScreens: {
       position: ['top', 'left']
