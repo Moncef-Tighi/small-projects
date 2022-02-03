@@ -1,12 +1,16 @@
 module.exports = {
   content: ['./dist/*.{html,js}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily : {
+        headline: ['Oswald']
+      }
+    },
     debugScreens: {
       position: ['top', 'left']
     },
   },
   plugins: [
-    require('tailwindcss-debug-screens'),
+    require('tailwindcss-debug-screens'), 
   ],
 }

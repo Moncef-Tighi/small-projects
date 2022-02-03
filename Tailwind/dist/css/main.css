@@ -381,19 +381,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
     h1 {
   margin-bottom: 1.25rem;
+  font-family: Oswald;
   font-size: 3rem;
   line-height: 1;
 }
     h2 {
   margin-bottom: 0.75rem;
+  font-family: Oswald;
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
     h3 {
   margin-bottom: 0.5rem;
+  font-family: Oswald;
   font-size: 1.5rem;
   line-height: 2rem;
 }
+    @font-face {
+        font-family: Oswald;
+        src: url(/dist/fonts/Oswald/Oswald-Bold.tff);
+    }
 
 *, ::before, ::after {
   --tw-translate-x: 0;
@@ -562,13 +569,4 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .text-center {
   text-align: center;
-}
-.font-serif {
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-}
-.font-thin {
-  font-weight: 100;
-}
-.font-black {
-  font-weight: 900;
 }
