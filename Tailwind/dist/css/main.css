@@ -579,6 +579,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mr-1 {
   margin-right: 0.25rem;
 }
+.mt-4 {
+  margin-top: 1rem;
+}
 .flex {
   display: flex;
 }
@@ -593,9 +596,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .min-h-screen {
   min-height: 100vh;
-}
-.w-2\/3 {
-  width: 66.666667%;
 }
 .w-3\/4 {
   width: 75%;
@@ -614,6 +614,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .justify-center {
   justify-content: center;
+}
+.justify-around {
+  justify-content: space-around;
 }
 .gap-4 {
   gap: 1rem;
@@ -662,15 +665,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-center {
   text-align: center;
 }
+.text-justify {
+  text-align: justify;
+}
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-.leading-4 {
-  line-height: 1rem;
-}
-.leading-5 {
-  line-height: 1.25rem;
+.leading-6 {
+  line-height: 1.5rem;
 }
 .text-main {
   --tw-text-opacity: 1;
@@ -718,14 +721,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 @media (min-width: 640px) {
 
-  .sm\:w-3\/4 {
-    width: 75%;
-  }
-
-  .sm\:w-4\/5 {
-    width: 80%;
-  }
-
   .sm\:gap-6 {
     gap: 1.5rem;
   }
@@ -738,11 +733,6 @@ Ensure the default browser behavior of the `hidden` attribute.
  
 
 @media (min-width: 768px) {
-
-  .md\:mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
 
   .md\:block {
     display: block;
@@ -767,5 +757,30 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:leading-5 {
     line-height: 1.25rem;
+  }
+}
+ 
+
+@media (min-width: 1024px) {
+
+  .lg\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .lg\:grid {
+    display: grid;
+  }
+
+  .lg\:w-2\/3 {
+    width: 66.666667%;
+  }
+
+  .lg\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:gap-4 {
+    gap: 1rem;
   }
 }
