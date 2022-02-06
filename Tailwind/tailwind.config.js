@@ -1,6 +1,11 @@
 module.exports = {
   content: ['./dist/*.{html,js}'],
+  mode: 'jit',
   darkMode: 'class',
+  purge: {
+    enabled : true,
+    content:['./dist/*.{html,js}']
+  },
   theme: {
     extend: {
       fontFamily : {
