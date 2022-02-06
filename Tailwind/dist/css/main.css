@@ -394,6 +394,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2.5rem;
   font-weight: 700;
 }
+    .dark h1 {
+  --tw-text-opacity: 1;
+  color: rgb(254 240 138 / var(--tw-text-opacity));
+}
     @media (min-width: 640px) {
 
   h1 {
@@ -414,6 +418,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 600;
+}
+    .dark h2 {
+  --tw-text-opacity: 1;
+  color: rgb(254 240 138 / var(--tw-text-opacity));
 }
     @media (min-width: 640px) {
 
@@ -436,6 +444,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2.25rem;
   font-weight: 600;
 }
+    .dark h3 {
+  --tw-text-opacity: 1;
+  color: rgb(254 240 138 / var(--tw-text-opacity));
+}
     @media (min-width: 1280px) {
 
   h3 {
@@ -451,6 +463,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.75rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+    .dark li {
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity));
 }
     @media (min-width: 768px) {
 
@@ -469,6 +485,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     p {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+    .dark p {
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity));
 }
     @media (min-width: 1280px) {
 
@@ -718,6 +738,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-justify {
   text-align: justify;
 }
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -726,15 +750,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
 .italic {
   font-style: italic;
-}
-.leading-3 {
-  line-height: .75rem;
 }
 .text-main {
   --tw-text-opacity: 1;
@@ -787,20 +804,56 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
  
 
+.dark .dark\:bg-gray-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+ 
+
+.dark .dark\:bg-gray-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
+ 
+
+.dark .dark\:text-indigo-200 {
+  --tw-text-opacity: 1;
+  color: rgb(199 210 254 / var(--tw-text-opacity));
+}
+ 
+
+.dark .dark\:text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+ 
+
+.dark .dark\:text-gray-100 {
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity));
+}
+ 
+
+.dark .dark\:hover\:bg-gray-400:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+}
+ 
+
 @media (min-width: 640px) {
 
   .sm\:gap-6 {
     gap: 1.5rem;
   }
 
-  .sm\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
   .sm\:text-5xl {
     font-size: 3rem;
     line-height: 1;
+  }
+
+  .sm\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
  
@@ -831,6 +884,10 @@ Ensure the default browser behavior of the `hidden` attribute.
  
 
 @media (min-width: 1024px) {
+
+  .lg\:w-4\/5 {
+    width: 80%;
+  }
 
   .lg\:w-2\/3 {
     width: 66.666667%;
