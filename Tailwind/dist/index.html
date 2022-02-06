@@ -1,17 +1,31 @@
-<html lang="en" class="dark">
+<html lang="en" x-data="{dark : false}" x-bind:class="dark ? 'dark' : '' ">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home page</title>
         <link rel="stylesheet" href="./css/main.css"/>
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     </head>
 
     <body class=" bg-main debug-screens">
 
-        <div class=" container lg:w-4/5 px-6 py-8 bg-gray-100 dark:bg-gray-900 mx-auto min-h-screen ">
+        <div class=" container  lg:w-4/5 px-6 py-8 bg-gray-100 dark:bg-gray-900 mx-auto min-h-screen ">
             <header id="header">
+                <button @click="dark= !dark" class="dark:bg-gray-500 p-2 
+                bg-gray-200 rounded hover:bg-gray-400 hover:shadow-none
+                shadow-lg transition dark:text-green-50 flex items-center
+                dark:hover:bg-gray-400
+                ">
+                <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+                </svg>
+                <svg x-show="dark" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                </svg>
+                  Activer le 
+                <span x-text="dark ? ' light' : ' dark'  " class=" mx-1"></span> Mode</button>
                 <div class=" text-center">
                     <h1 class="mb-1 leading-14 text-main">Tom Gonzales coach professisonnel<br> 
                         <span class=" text-indigo-900 dark:text-indigo-200 italic text-4xl sm:text-5xl lg:text-7xl opacity-80">
