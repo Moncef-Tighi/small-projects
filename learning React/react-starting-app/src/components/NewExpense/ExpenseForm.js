@@ -4,20 +4,20 @@ import { useState } from 'react'
 const ExpenseForm= (props) => {
 
     const [inputs, setInput] = useState({
-        titre: '',
+        title: '',
         amount : '',
         date : ''
     })
     const titleChangeHandeler = (event) => {
         setInput( (previousState) => {
-            return { ...previousState, titre:  event.target.value}
+            return { ...previousState, title:  event.target.value}
         });
 
     }
 
     const amountChangeHandeler = (event) => {
         setInput( (previousState) => {
-            return { ...previousState, amount:  event.target.value}
+            return { ...previousState, amount:  Number(event.target.value)}
         });
 
     }
@@ -33,7 +33,7 @@ const ExpenseForm= (props) => {
         event.preventDefault();
         props.onNewExpense(inputs);
         setInput({
-            titre: '',
+            title: '',
             amount : '',
             date : ''    
         })
@@ -44,7 +44,7 @@ const ExpenseForm= (props) => {
             <div className="new-expense__controls">
                 <div className="new-expense__control">
                     <label>Titre</label>
-                    <input type='text' value={inputs.titre} onChange={titleChangeHandeler}/>
+                    <input type='text' value={inputs.title} onChange={titleChangeHandeler}/>
                 </div>
                 <div className="new-expense__control">
                     <label>amount</label>

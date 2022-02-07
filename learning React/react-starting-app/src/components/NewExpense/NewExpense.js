@@ -5,8 +5,9 @@ const NewExpense = (props) => {
 
     function NewExpense(expenseData) {
         const addExpense= {
+            id: Math.random().toString(),
             ...expenseData,
-            id: Math.random().toString()
+            date: new Date(expenseData["date"]),
         }
         props.onAddExpense(addExpense);
     }
