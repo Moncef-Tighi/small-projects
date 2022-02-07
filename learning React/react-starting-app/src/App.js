@@ -31,7 +31,7 @@ function App() {
 	const [expenses, setExpenses] = useState(DummyData);
 	const addExpense= function(newExpense) {
 		setExpenses( (previous)=> {
-			return [...previous,newExpense];
+			return [newExpense,...previous];
 		});
 	}
 	return (
