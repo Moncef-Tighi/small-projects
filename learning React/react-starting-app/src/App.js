@@ -1,15 +1,14 @@
-import Expenses from './components/Expanses/Expenses'
-
+import Expenses from "./components/Expanses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
 
-  return (
-    <div>
-      <h2>Let's get started!</h2>
-      <p>This also visible</p>
-      <Expenses/>
-    </div>
-  );
+	return (
+		<div>
+			<NewExpense/>
+			<Expenses />
+    	</div>
+    );
 }
 
 export default App;
