@@ -1,42 +1,31 @@
-import { useState } from 'react';
+import { useRef } from 'react';
 import styles from './AddUser.module.css';
 import Button from './UI/Button';
 import Card from './UI/Card'; 
 
 function AddUser(props) {
-    const [user, setUserInfo]=useState({
-        name : '',
-        age : 0
-    });
 
-    const updateName= function(event) {
-        setUserInfo({
-            ...user,
-            name: event.target.value,
-        })
-    }
-    const updateAge= function(event) {
-        setUserInfo({
-            ...user,
-            age: Number(event.target.value),
-        })
-    }
+    const name = useRef();
+    const age = useRef();
+
     
     const submitUser= function(event) {
         event.preventDefault();
-        props.onNewUser({...user, key : Math.random().toString()});
-        setUserInfo({
-            name : '',
-            age : 0
+        props.onNewUser({
+            name :name.current.value,
+            age: age.current.value,
+            key : Math.random().toString()
         })
+        name.current.value='';
+        age.current.value='';
     }
     
     return (<Card className={styles.input}>
         <form onSubmit={submitUser}>
             <label>Username : </label>
-            <input type='text' onChange={updateName} value={user.name}></input>
+            <input type='text' ref={name}></input>
             <label>Age (années) : </label>
-            <input type='number' step='1' onChange={updateAge} value={user.age}></input>
+            <input type='number' step='1' ref={age}></input>
             <Button>Ajouter un user</Button>
         </form>
     </Card>)

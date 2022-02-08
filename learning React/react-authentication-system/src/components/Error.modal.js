@@ -49,7 +49,7 @@ const ErrorModal = function(props) {
         )
     }
     return (
-        <Card></Card>
+        <></>
     )
 }
 
