@@ -15,14 +15,15 @@ function App() {
   };
 
   const logoutHandler = () => {
+    localStorage.removeItem('isLoggedIn');
     setIsLoggedIn(false);
   };
 
   useEffect(()=> {
-      if (localStorage.getItem('isLoggedIn')) {
-        setIsLoggedIn(true);
-      }
-  } , []); 
+    if (localStorage.getItem('isLoggedIn')) {
+      setIsLoggedIn(true);
+    }
+  } , [isLoggedIn]); 
 
   return (
     <React.Fragment>
