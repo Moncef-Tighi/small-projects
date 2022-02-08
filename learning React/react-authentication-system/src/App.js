@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import AddUser from './components/AddUser';
 import UsersList from './components/UsersList';
 import ErrorModal from './components/Error.modal';
+import Wrapper from './components/Helpers/Wrapper';
 
 function App() {
 
@@ -18,15 +19,16 @@ function App() {
     setUsers( previous=> {
       return [...previous, user];
     } )
-
   }
 
   return (
-  <div>
-        <ErrorModal error={errors}/>
-        <AddUser onNewUser={addUser}/>
-        <UsersList userList={users}/>
-    </div>
+    <Wrapper>
+      <ErrorModal error={errors}/>
+      <div>
+          <AddUser onNewUser={addUser}/>
+          <UsersList userList={users}/>
+      </div>
+    </Wrapper>
   );
 }
 
