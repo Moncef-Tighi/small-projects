@@ -15,7 +15,7 @@ const ErrorModal = function(props) {
         console.log("test");
         setError('');
     }
-    console.log(error);
+
     if (error==='empty' || error==='age') {
         return (
             <div className={styles.backdrop} onClick={dismiss}>
@@ -26,7 +26,9 @@ const ErrorModal = function(props) {
                         <div className={styles.content}>
                             {error==='empty' ? 'Veuillez entrer un age et nom valide' : 'Entrez un age valide (>0)'}
                         </div>
-                        <Button className={styles.actions} onClick={dismiss}></Button>
+                        <footer className={styles.actions}>
+                            <Button onClick={dismiss}>Annuler</Button>
+                        </footer>
                 </Card>
             </div>
         )

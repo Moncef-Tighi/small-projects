@@ -9,7 +9,7 @@ function App() {
   const [errors, setError]=useState('');
 
   const addUser= function(user) {
-    if (!user.name || !user.age ) {
+    if (!user.name.trim() || !user.age ) {
       return setError('empty');
     }
     if (user.age<0) {
@@ -22,10 +22,10 @@ function App() {
   }
 
   return (
-    <div>
+  <div>
+        <ErrorModal error={errors}/>
         <AddUser onNewUser={addUser}/>
         <UsersList userList={users}/>
-        <ErrorModal error={errors}/>
     </div>
   );
 }
