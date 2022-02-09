@@ -33,7 +33,7 @@ const ErrorModal = function(props) {
 
     useEffect( ()=> {
         setError(props.error);
-    }, [props.error]);
+    }, [error]);
 
     const dismiss= ()=> {
         console.log("test");

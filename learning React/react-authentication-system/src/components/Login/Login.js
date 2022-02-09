@@ -11,7 +11,6 @@ const Login = (props) => {
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
 
-
     useEffect( () => {
       setFormIsValid(
         enteredEmail.includes('@') && enteredPassword.trim().length > 6
@@ -63,11 +62,7 @@ const Login = (props) => {
         >
           <label htmlFor="password">Password</label>
           <input
-            type="password"
-            id="password"
-            value={enteredPassword}
-            onChange={passwordChangeHandler}
-            onBlur={validatePasswordHandler}
+            type="password" id="password" value={enteredPassword} onChange={passwordChangeHandler} onBlur={validatePasswordHandler}
           />
         </div>
         <div className={classes.actions}>
