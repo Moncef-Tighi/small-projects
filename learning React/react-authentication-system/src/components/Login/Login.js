@@ -27,10 +27,18 @@ const Login = (props) => {
   const [password, dispatchPassword] = useReducer(passwordReducer, {value : '', isValid: true});
 
   useEffect( () => {
+    const validation = setTimeout( () => {
+      //On utilie timeout parce qu'on a pas besoin de vérifier la validité à chaque fois
+
       setFormIsValid(
-        email.value.includes('@') && password.value.trim().length > 6
-      );  
-    }, [email.value, password.value] )
+          password.isValid && email.isValid
+        );  
+      }, 400);
+
+    //Cleanup function
+    return () => clearTimeout(validation);
+
+    }, [email.isValid, password.isValid] )
 
   const emailChangeHandler = (event) => dispatchEmail({ type : 'EMAIL_INPUT', value : event.target.value});
   const validateEmailHandler = () => dispatchEmail({ type : 'EMAIL_VALIDATION'});
