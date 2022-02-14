@@ -1,4 +1,5 @@
-import classes from 'Header.module.css';
+import classes from './Header.module.css';
+import React from 'react';
 
 const Header= function(props) {
 
@@ -8,8 +9,8 @@ const Header= function(props) {
             <h2>ReactMeals</h2>
             <button>Your Cart</button>
         </header>
-        <div className={classes.main-image}>
-            <img src='meals.jpg'></img>
+        <div className={classes.mainImage}>
+            <img src='./meals.jpg' alt=""></img>
         </div>
     </>
     )

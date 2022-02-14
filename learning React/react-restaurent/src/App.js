@@ -1,9 +1,16 @@
+import Header from "./components/Header";
+import MealsSummary from './components/MealsSummary'
+import Meals from './components/Meals'
+
 function App() {
+
   return (
-    <div>
-      <h2>Let's get started!</h2>
-    </div>
-  );
+    <>
+      <Header/>
+      <MealsSummary/>
+      <Meals/>
+    </>  
+    );
 }
 
 export default App;
