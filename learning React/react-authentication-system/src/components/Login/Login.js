@@ -3,6 +3,7 @@ import React, { useState, useEffect, useReducer } from 'react';
 import Card from '../UI/Card/Card';
 import classes from './Login.module.css';
 import Button from '../UI/Button/Button';
+import Input from '../UI/Input';
 
 
 const emailReducer = function(state, action) {
@@ -54,26 +55,11 @@ const Login = (props) => {
   return (
     <Card className={classes.login}>
       <form onSubmit={submitHandler}>
-        <div
-          className={`${classes.control} ${
-            email.isValid === false ? classes.invalid : ''
-          }`}
-        >
-          <label htmlFor="email">E-Mail</label>
-          <input
-            type="email" id="email" value={email.value} onChange={emailChangeHandler} onBlur={validateEmailHandler}
-          />
-        </div>
-        <div
-          className={`${classes.control} ${
-            password.isValid === false ? classes.invalid : ''
-          }`}
-        >
-          <label htmlFor="password">Password</label>
-          <input
-            type="password" id="password" value={password.value} onChange={passwordChangeHandler} onBlur={validatePasswordHandler}
-          />
-        </div>
+        <Input className={`${classes.control} ${email.isValid === false ? classes.invalid : ''}`}
+          type="email" value={email.value} onChange={emailChangeHandler} onBlur={validateEmailHandler}/>
+        <Input className={`${classes.control} ${password.isValid === false ? classes.invalid : ''}`}
+          type="password" value={password.value} onChange={passwordChangeHandler} onBlur={validatePasswordHandler}/>
+          
         <div className={classes.actions}>
           <Button type="submit" className={classes.btn} disabled={!formIsValid}>
             Login
