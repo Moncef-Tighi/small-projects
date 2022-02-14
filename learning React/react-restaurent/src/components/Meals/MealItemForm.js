@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const MealItemForm = function(props) {
     const [quantity, updateQuantity] = useState(0);
-    const getValue = (input) => updateQuantity(input.current.value);
+    const getValue = (input) => updateQuantity(input.current);
 
     const submitForm = function(event) {
         event.preventDefault();

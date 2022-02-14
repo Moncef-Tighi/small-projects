@@ -1,17 +1,19 @@
 import Header from "./components/Header/Header";
 import MealsSummary from './components/Meals/MealsSummary'
 import Meals from './components/Meals/Meals'
-import CartStateProvider from './state/cartState';
+import CartState from './state/cartState';
+import { useContext } from "react";
 
 function App() {
-
+  const context = useContext(CartState);
+  
   return (
     <>
-      <CartStateProvider>
+      <CartState.Provider value={context.cart}>
         <Header/>
         <MealsSummary/>
         <Meals/>
-      </CartStateProvider>
+      </CartState.Provider>
     </>
     );
 }
