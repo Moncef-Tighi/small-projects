@@ -1,6 +1,6 @@
-import Header from "./components/Header";
-import MealsSummary from './components/MealsSummary'
-import Meals from './components/Meals'
+import Header from "./components/Header/Header";
+import MealsSummary from './components/Meals/MealsSummary'
+import Meals from './components/Meals/Meals'
 
 function App() {
 
