@@ -1,16 +1,17 @@
 import classes from './Header.module.css';
 import React from 'react';
-
+import image from './meals.jpg';
+import HeaderCartButton from './HeaderCartButton';
 const Header= function(props) {
 
     return (
     <>
         <header className={classes.header}>
             <h2>ReactMeals</h2>
-            <button>Your Cart</button>
+            <HeaderCartButton/>
         </header>
         <div className={classes.mainImage}>
-            <img src='./meals.jpg' alt=""></img>
+            <img src={image} alt=""/>
         </div>
     </>
     )

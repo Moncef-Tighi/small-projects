@@ -9,7 +9,7 @@ function App() {
   
   return (
     <>
-      <CartState.Provider value={context.cart}>
+      <CartState.Provider value={context}>
         <Header/>
         <MealsSummary/>
         <Meals/>
