@@ -3,13 +3,15 @@ import CartIcon from '../CartIcon';
 
 const HeaderCartButton = function(props) {
     return (
-        <button className={classes.button}>
-            <span className={classes.icon}><CartIcon/></span>
-            <span>Votre commande</span>
-            <span className={classes.badge}>
-                0
-            </span>
-        </button>
+        <>
+            <button className={classes.button} onClick={props.onClick}>
+                <span className={classes.icon}><CartIcon/></span>
+                <span>Votre commande</span>
+                <span className={classes.badge}>
+                    0
+                </span>
+            </button>
+        </>
     )
 }
 
