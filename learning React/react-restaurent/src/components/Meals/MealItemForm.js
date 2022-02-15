@@ -1,18 +1,20 @@
 import classes from './MealItemForm.module.css';
 import Input from '../UI/Input';
-import { useState } from 'react';
+import { useRef } from 'react';
 
 const MealItemForm = function(props) {
-    const [quantity, updateQuantity] = useState(0);
-    const getValue = (input) => updateQuantity(input.current)
 
+    const amount= useRef();
     const submitForm = function(event) {
         event.preventDefault();
-        props.onSubmit(quantity);
+        const currentAmount = Number(amount.current.value);
+        if (currentAmount<1) return
+        props.onAddToCart(amount);
     }
+    
     return(
         <form className={classes.form} onSubmit={submitForm}>
-            <Input label='Quantité' onSubmit={getValue} input={{
+            <Input label='Quantité' onSubmit={submitForm} ref={amount} input={{
                 id: 'amount',
                 type : 'number',
                 min : '1',

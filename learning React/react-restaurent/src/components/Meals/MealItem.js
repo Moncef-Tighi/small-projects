@@ -4,13 +4,13 @@ import { useContext } from 'react';
 import CartState from '../../state/cartState';
 
 const MealItem= function(props) {
-    const {context, updateContext} = useContext(CartState);
-    console.log(context);
-    const submit= function(input) {
-        updateContext({
+    const context = useContext(CartState);
+    const submit= function(amount) {
+        context.addItem({
+            id: props.id,
             name : props.name,
             price : props.price,
-            quantity : input.value    
+            quantity : amount    
         })
     }
 
@@ -21,7 +21,7 @@ const MealItem= function(props) {
                 <p className={classes.description}>{props.description}</p>
                 <p className={classes.price}>${props.price}</p>
             </div>
-            <MealItemForm onSubmit={submit}/>
+            <MealItemForm onAddToCart={submit}/>
         </li>
     )
 }
