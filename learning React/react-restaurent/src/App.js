@@ -2,7 +2,7 @@ import Header from "./components/Header/Header";
 import MealsSummary from './components/Meals/MealsSummary'
 import Meals from './components/Meals/Meals'
 import CartProvider from './state/cartProvider';
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Cart from './components/Cart/Cart';
 
 function App() {
