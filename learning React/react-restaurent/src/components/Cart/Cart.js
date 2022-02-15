@@ -7,10 +7,13 @@ import CartItem from './CartItem';
 const Cart = function(props) {
     const state = useContext(CartState);
     const cartItemRemove = id => {
-
+        state.removeItem(id);
     }
     const cartItemAdd = item => {
-
+        state.addItem({
+            ...item,
+            quantity: 1
+        });
     }
     const items = state.items.map( (item)=>  {
         return (
