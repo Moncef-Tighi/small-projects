@@ -11,6 +11,25 @@ const fetchMovies= async function() {
 
 function App() {
 
+  const [movies, setMovies] = useState([]);
+
+  const [isLoading, setIsLoading] = useState(false);
+  async function LoadData() {
+    setIsLoading(true);
+    const data = await fetchMovies();
+    const moviesData = data.results.map( (movieData) => {
+      return {
+        id: movieData.episode_id,
+        title: movieData.title,
+        openingText : movieData.opening_crawl,
+        releaseDate : movieData.release_date
+      }
+    });
+    setMovies(moviesData);
+    setIsLoading(false);
+  } 
+
+
   const dummyMovies = [
     {
       id: 1,
