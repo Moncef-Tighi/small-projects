@@ -12,9 +12,9 @@ const fetchMovies= async function() {
 function App() {
 
   const [movies, setMovies] = useState([]);
-
   const [isLoading, setIsLoading] = useState(false);
-  async function LoadData() {
+
+  async function loadData() {
     setIsLoading(true);
     const data = await fetchMovies();
     const moviesData = data.results.map( (movieData) => {
@@ -29,29 +29,18 @@ function App() {
     setIsLoading(false);
   } 
 
-
-  const dummyMovies = [
-    {
-      id: 1,
-      title: 'Some Dummy Movie',
-      openingText: 'This is the opening text of the movie',
-      releaseDate: '2021-05-18',
-    },
-    {
-      id: 2,
-      title: 'Some Dummy Movie 2',
-      openingText: 'This is the second opening text of the movie',
-      releaseDate: '2021-05-19',
-    },
-  ];
+ 
 
   return (
     <React.Fragment>
       <section>
-        <button>Fetch Movies</button>
-      </section>
+        <button onClick={loadData}>Fetch Movies</button>
+        {!isLoading && movies.length>0 && <MoviesList movies={movies} />}
+        {!isLoading &&  movies.length===0 && <h2>Aucun film n'a été chargé</h2> }
+        {isLoading && <p>Chargement des données... </p>}
+
       <section>
-        <MoviesList movies={dummyMovies} />
+      </section>
       </section>
     </React.Fragment>
   );
