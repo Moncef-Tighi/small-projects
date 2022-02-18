@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 
 import MoviesList from './components/MoviesList';
 import './App.css';
+import AddMovie from './components/AddMovie';
 
 const fetchMovies= async function() {
-  const request = await fetch("https://swapi.dev/api/films");
+  const request = await fetch("https://react-movies-33435-default-rtdb.europe-west1.firebasedatabase.app/movies.json");
   if (!request.ok) throw new Error(request.status);
   return await request.json();
 }
@@ -50,7 +51,10 @@ function App() {
   return (
     <React.Fragment>
       <section>
-        <button onClick={loadData}>Fetch Movies</button>
+        <AddMovie/>
+      </section>
+      <section>
+        <button onClick={loadData}>Afficher les films</button>
       </section>
       <section>
         {page}
