@@ -36,7 +36,16 @@ function App() {
     }
   } 
 
- 
+  let page = <h2>Aucun film n'a été chargé</h2>
+  if (movies.length>0) {
+    page= <MoviesList movies={movies} />
+  }
+  if (isLoading) { 
+    page = <p>Chargement des données... </p>
+  }
+  if (error) {
+    page=<p>Une erreur a été rencontrée...</p>
+  }
 
   return (
     <React.Fragment>
@@ -44,10 +53,7 @@ function App() {
         <button onClick={loadData}>Fetch Movies</button>
       </section>
       <section>
-        {!isLoading && movies.length>0 && <MoviesList movies={movies} />}
-        {!isLoading &&  movies.length===0 && <h2>Aucun film n'a été chargé</h2> }
-        {isLoading && error===null && <p>Chargement des données... </p>}
-        {error != null && <p>Une erreur a été rencontrée...</p>}
+        {page}
       </section>
     </React.Fragment>
   );
