@@ -1,0 +1,345 @@
+/************************************************ General **********************************************************/
+
+* {
+    box-sizing: border-box;/*content box*/
+}
+
+
+html
+{
+    width: 100%;
+    height: 100%;
+
+}
+
+
+body
+{
+    /*float: left;*/
+
+    width: 100%;
+    height: 100%;
+
+    margin: auto;  /* margin : 0   /  width : 100% */
+    padding: 0;
+}
+
+/************************************************ General   END **********************************************************/
+
+
+
+
+
+
+/************************************************ HEADER **********************************************************/
+
+.header {
+
+    float: left;
+    width: 100%;
+    height: 16%;
+
+    background-color: rgba(69, 75, 87, 0.8);
+    color: rgba(255, 255, 255, 0.64);
+
+    border: rgba(115, 123, 139, 0.8) 1px solid;
+
+}
+
+.header-title {
+    float: right;
+    width: 85%;
+
+    color: white;
+    text-align: center;
+
+}
+
+.logo {
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 15%;
+
+}
+
+.btnmenu {
+
+    display: none;
+
+}
+
+/************************************************ HEADER END **********************************************************/
+
+
+
+
+/************************************************ MENU **********************************************************/
+
+.menu {
+
+    float: left;
+    width: 15%;
+    /*height: 100%;*/
+
+    /*background-color: #f1f1f1;*/
+}
+
+.menu ul {
+    float: left;
+    list-style-type: none;
+
+    margin: 0; /* pour effacer les espaces*/
+    padding: 0;
+
+    width: 100%;
+
+}
+
+.menu ul li a {
+    display: block;
+    color: #000;
+    padding: 6px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color on hover */
+.menu ul li a:hover {
+    background-color: #555;
+    color: white;
+}
+
+/************************************************ MENU   END **********************************************************/
+
+
+
+
+/************************************************ ARTICLE **********************************************************/
+
+.article-list
+{
+    float: left;
+    width: 85%;
+    height: 78%;
+
+    border-left: gray 2px solid;
+
+
+}
+
+
+.article-list .article{
+
+    float: left;
+    width: 96%;
+    height: 50%;
+
+    margin: 2%;
+
+    border: #c4c4c4 solid 1px;
+    border-radius: 8px;
+}
+
+
+.article-list .article h2{
+
+    float: left;
+    width: 30%;
+
+    margin-left : 6%;
+    margin-top: 2%;
+
+
+    font-family: Verdana;
+
+}
+
+
+
+.article-list .article p{
+
+    float: right;
+    width: 72%;
+    /*height: 130px;*/
+
+    margin-top: 0;
+    margin-right : 2%;
+    margin-bottom: 2%;
+
+    padding: 2%;
+
+    border: #c4c4c4 outset 1px;
+
+}
+
+.article-list .article img{
+
+    float: left;
+    width: 15%;
+    /*height:130px;*/
+
+    margin-left : 5%;
+    margin-bottom: 2%;
+
+    border-radius: 5px;
+}
+
+/************************************************ ARTICLE END**********************************************************/
+
+
+
+
+
+/************************************************ ARTICLE detail **********************************************************/
+
+
+.article-detail
+{
+    float: left;
+    width: 85%;
+    height: 95%;
+    border-left: gray 2px solid;
+
+
+}
+
+
+.article-detail .article{
+
+    float: left;
+    width: 96%;
+    height: 100%;
+
+    margin: 2%;
+
+    border: #c4c4c4 solid 1px;
+    border-radius: 8px;
+}
+
+
+.article-detail .article h2{
+
+    float: left;
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 3%;
+
+
+    font-family: Verdana;
+
+}
+
+.article-detail .article h3{
+
+    float: left;
+    display: block;
+    font-size: 20px;
+
+    margin-left: 3% ;
+    margin-bottom: 0;
+
+    font-family: Verdana;
+
+}
+
+.article-detail .article p,.article-detail .article ul{
+
+    float: left;
+    width: 96%;
+    /*height: 130px;*/
+
+    margin-top: 1%;
+
+    margin-left: 2%;
+
+
+    padding: 2%;
+
+    border: #c4c4c4 outset 1px;
+
+}
+
+.article-img{
+    float: left;
+    display: flex;
+    justify-content: space-around;
+    margin : 4%;
+
+}
+
+.article-detail .article img{
+
+    float: left;
+    width: 15%;
+
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+
+/************************************************ ARTICLE detail END **********************************************************/
+
+
+
+
+
+/************************************************ FOOTER **********************************************************/
+
+.footer {
+
+    float: left;
+    width: 100%;
+    height: 6%;
+
+    background-color: rgba(69, 75, 87, 0.8);
+
+    text-align: center;
+}
+
+.footer p {
+
+    margin-top: 10px;
+}
+
+
+/************************************************ FOOTER END**********************************************************/
+
+
+
+.content
+{
+
+    float: left;
+    width: 100%;
+    height: auto;
+
+}
+
+
+
+@media screen and (max-width: 800px) {
+
+    .menu ul{
+        display: none;
+    }
+
+    .btnmenu {
+        float: left;
+        background-color: #2966cd;
+        display: block;
+    }
+
+
+    /*a reparer*/
+    .btnmenu:hover .menu ul{
+        display: block;
+        float: left;
+        width: 100%;
+
+        background-color: #f1f1f1;
+    }
+
+
+
+}
