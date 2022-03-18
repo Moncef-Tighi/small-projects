@@ -1,7 +1,7 @@
 import fs from 'fs';
 import http from 'http';
 
-const index = fs.readFileSync("./view/index.html", {encoding : 'utf-8'});
+const index = fs.readFileSync("./views/index.html", {encoding : 'utf-8'});
 
 const homeController = function(request, response) {
     response.writeHead(200, {'Content-Type' : 'text/html'});
