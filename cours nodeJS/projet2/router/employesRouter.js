@@ -1,22 +1,19 @@
 import express from 'express';
 
+
+import {fetchAll} from '../model/employes.js';
+
+
 const router = express.Router();
 
 router.get('/', (request, response, next)=>{
-    
-    response.status(200).render("articles.ejs");
+    fetchAll( (error, employes) => {
+
+        return response.status(200).render("employes.ejs", {employes,});
+    })
 })
 router.get('/:id', (request, response, next)=>{
-    const id = request.params.id;
-    response.status(200).render("articles.ejs", {id,
-    eleves : [{
-        nom : 'Boucette', prenom : 'Zakaria'
-    },{
-        nom : 'Bouarou', prenom : 'Zakaria'
-    },{
-        nom : 'Tighiouart', prenom : 'Moncef'
-    }]
-    });
+
 })
 
 export default router

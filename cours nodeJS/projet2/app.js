@@ -3,6 +3,7 @@ import path from "path";
 import mysql from 'mysql';
 
 import articlesRouter from './router/articlesRouter.js';
+import employeRouter from './router/employesRouter.js';
 
 const server = express();
 const db = mysql.createConnection({
@@ -28,6 +29,7 @@ server.get('/', (request, response, next)=>{
 })
 
 server.use('/articles', articlesRouter);
+server.use('/employe', employeRouter);
 
 
 server.use((request,response,next) => {
