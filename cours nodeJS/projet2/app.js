@@ -1,6 +1,8 @@
 import express from "express";
 import path from "path";
 
+import articlesRouter from './router/articlesRouter.js';
+
 const server = express();
 
 //server.use(helmet());
@@ -14,14 +16,7 @@ server.get('/', (request, response, next)=>{
     response.status(200).render("accueil.ejs");
 })
 
-server.get('/articles', (request, response, next)=>{
-    response.status(200).render("articles.ejs");
-})
-server.get('/articles/:id', (request, response, next)=>{
-    const id = request.params.id;
-    response.status(200).render("accueil.ejs", {id,});
-})
-
+server.use('/articles', articlesRouter);
 
 
 server.use((request,response,next) => {
