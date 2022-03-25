@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employes</title>
+</head>
+<body>
+    <table>
+    <tr> 
+        <td>nom</td> 
+        <td>prenom</td>
+        <td>salaire</td>
+        <td>Service</td>
+        <td>Détails</td>
+    </tr>
+    <% employes.map(employe => {%>
+        <%= 
+        `
+        <td>${NOM_EMP}</td> 
+        <td>${PRENOM_EMP}</td>
+        <td>${ID_SERVICE}</td>
+        <td>${ID_SALAIRE}</td>
+        `  
+        %>
+    <% }) %>
+    </table>
+</body>
+</html>

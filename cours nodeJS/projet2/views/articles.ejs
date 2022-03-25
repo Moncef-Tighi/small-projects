@@ -8,12 +8,15 @@
 </head>
 <body>
     <h1>Articles <%=id %></h1>
+    <ol>
+        <% eleves.map(eleve => { %>
+            <li><%= `Nom : ${eleve.nom} | Prenom : ${eleve.prenom} ` %></li>
+        <% }) %>
+    </ol>
     <ul>
-        <li>Article</li>
-        <li>Article</li>
-        <li>Article</li>
-        <li>Article</li>
-        <li>Article</li>
+        <% for (let i=0; i<Number(id); i++ ) { %>
+            <li> <%= i+1 %> </li>
+        <% } %>
     </ul>
 
 </body>
