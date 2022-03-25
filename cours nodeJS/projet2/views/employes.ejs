@@ -19,8 +19,9 @@
         <tr>
             <td><%= employe.NOM_EMP %></td> 
             <td><%= employe.PRENOM_EMP %></td>
-            <td><%= employe.ID_SERVICE %></td>
-            <td><%= employe.ID_SALAIRE %></td>
+            <td><%= employe.SALAIRE %></td>
+            <td><%= employe.NOM_SERVICE %></td>
+            <td><a href=<%= `employe/${employe.ID_EMP}` %> >Plus d'infos</a></td>
         </tr>
     <% }) %>
     </table>

@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get('/', (request, response, next)=>{
     fetchAll( (error, employes) => {
-
+        if (error) return response.status(500).send(error);
         return response.status(200).render("employes.ejs", {employes,});
     })
 })
