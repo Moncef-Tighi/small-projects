@@ -1,4 +1,4 @@
-import db from '../app.js';
+import db from './database.js';
 
 export const fetchAll = function(callback) {
     db.query(`
