@@ -1,19 +1,9 @@
 import express from 'express';
-
-
-import {fetchAll} from '../model/employes.js';
-
+import {getAll} from "../controller/employeController.js";
 
 const router = express.Router();
 
-router.get('/', (request, response, next)=>{
-    fetchAll( (error, employes) => {
-        if (error) return response.status(500).send(error);
-        return response.status(200).render("employes.ejs", {employes,});
-    })
-})
-router.get('/:id', (request, response, next)=>{
-
-})
+router.get('/', getAll);
+router.get('/:id');
 
 export default router
