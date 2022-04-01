@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,11 +21,14 @@ Route::get('/', function () {
 Route::get('/ping', function () {
     //return view('welcome');
     return 'ok';
-});
+})->name('ping');
 Route::get('/etudiant/{matricule}', function ($matricule) {
     return 'étudiant : ' . $matricule;
-});
+})->middleware('heure');
 Route::get('/semestre/{semestre?}', function ($semestre=1) {
     return 'semestre : ' . $semestre;
 });
 
+Route::get('/admin', ['middleware'=>'heure:21', 'uses' =>'admincontroller@index']);
+
+Route::get('/patients', 'PatientController@liste')->name('patients');
