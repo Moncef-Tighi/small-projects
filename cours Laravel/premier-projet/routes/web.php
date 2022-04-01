@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/ping', function () {
+    //return view('welcome');
+    return 'ok';
+});
+Route::get('/etudiant/{matricule}', function ($matricule) {
+    return 'étudiant : ' . $matricule;
+});
+Route::get('/semestre/{semestre?}', function ($semestre=1) {
+    return 'semestre : ' . $semestre;
+});
+
