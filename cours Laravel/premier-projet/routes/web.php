@@ -29,6 +29,6 @@ Route::get('/semestre/{semestre?}', function ($semestre=1) {
     return 'semestre : ' . $semestre;
 });
 
-Route::get('/admin', ['middleware'=>'heure:21', 'uses' =>'admincontroller@index']);
+//Route::get('/admin', ['middleware'=>'heure:21', 'uses' =>'AdminController@index']);
 
 Route::get('/patients', 'PatientController@liste')->name('patients');

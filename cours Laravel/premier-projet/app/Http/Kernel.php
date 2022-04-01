@@ -21,6 +21,9 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        \App\Http\Controllers\AdminController::class,
+        \App\Http\Controllers\PatientController::class,
+
     ];
 
     /**
@@ -64,5 +67,8 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'heure' => \App\Http\Middleware\HeureMiddleware::class,
+        'AdminController' =>\App\Http\Controllers\AdminController::class,
+        'PatientController' =>\App\Http\Controllers\PatientController::class,
+
     ];
 }
