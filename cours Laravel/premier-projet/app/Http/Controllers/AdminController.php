@@ -13,3 +13,4 @@ class AdminController extends Controller
         return 'ok : ';
     }
 }
+

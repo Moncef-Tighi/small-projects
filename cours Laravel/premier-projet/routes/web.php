@@ -18,17 +18,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/ping', function () {
-    //return view('welcome');
-    return 'ok';
-})->name('ping');
-Route::get('/etudiant/{matricule}', function ($matricule) {
-    return 'étudiant : ' . $matricule;
-})->middleware('heure');
-Route::get('/semestre/{semestre?}', function ($semestre=1) {
-    return 'semestre : ' . $semestre;
-});
+// Route::get('/ping', function () {
+//     //return view('welcome');
+//     return 'ok';
+// })->name('ping');
+// Route::get('/etudiant/{matricule}', function ($matricule) {
+//     return 'étudiant : ' . $matricule;
+// })->middleware('heure');
+// Route::get('/semestre/{semestre?}', function ($semestre=1) {
+//     return 'semestre : ' . $semestre;
+// });
 
+//Ancienne Version de Laravel  
 //Route::get('/admin', ['middleware'=>'heure:21', 'uses' =>'AdminController@index']);
 
-Route::get('/patients', 'PatientController@liste')->name('patients');
+//Nouvelele version de Laravel
+// Route::get('/patients', [\App\Http\Controllers\PatientController::class, 'liste'])->name('patients');
