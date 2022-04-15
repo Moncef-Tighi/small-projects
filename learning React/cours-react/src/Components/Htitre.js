@@ -1,9 +1,9 @@
 import './Htitre.css';
 
-function Htitre() {
+function Htitre(props) {
     return (
-        <div>
-            Titre
+        <div className={props.color}>
+            {props.pageTitle}
         </div>
     )
 }

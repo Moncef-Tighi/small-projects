@@ -5,9 +5,10 @@ import ShoppingList from './Components/ShoppingList';
 import Header from './Components/Header';
 
 function App() {
+  const pageTitle = '';
   return (
     <div className="App">
-      <Header/>
+      <Header title={pageTitle}/>
       <ShoppingList/>
       <Component1/>
       <Compteur />
