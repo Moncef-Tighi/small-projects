@@ -1,17 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 import Component1 from './Components/Component1';
-import Button from './Components/Button';
+import Compteur from './Components/Button';
 import ShoppingList from './Components/ShoppingList';
+import Header from './Components/Header';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-		<ShoppingList/>
-		<Component1/>
-		<Button />
+      <Header/>
+      <ShoppingList/>
+      <Component1/>
+      <Compteur />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -23,7 +22,6 @@ function App() {
         >
           Learn React
         </a>
-      </header>
     </div>
   );
 }

@@ -1,0 +1,12 @@
+.header {
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+    background: lightgray;
+    padding: 10px;
+    box-sizing: border-box;
+}
