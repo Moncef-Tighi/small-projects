@@ -13,7 +13,7 @@ const SimpleInput = (props) => {
 
   const exitingInput = event=> {
     event.preventDefault();
-    setError(validate(name)); 
+    setError(validate(name));
   }
   const formSubmission = event => {
     event.preventDefault();
