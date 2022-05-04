@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { useRef } from 'react/cjs/react.production.min';
+import { useContext, useRef } from 'react/cjs/react.production.min';
+import AuthContext from '../store/authContext';
 
 import classes from './AuthForm.module.css';
 
@@ -8,6 +9,7 @@ const AuthForm = () => {
   const [loading, setLoading] = useState(false);
   const email = useRef();
   const password = useRef();
+  const authContext = useContext(AuthContext);
 
   const submitHandeler = async event => {
     event.preventDefault();
@@ -32,6 +34,7 @@ const AuthForm = () => {
       });
       setLoading(false);
       if (!response.ok) throw response.error;
+      authContext.login(response.token);
     }
 
   }

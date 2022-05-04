@@ -27,7 +27,7 @@ const AuthContext= React.createContext({
     isLoggedIn : '',
     login : (token) => {},
     logout : ()=> {},
-    permission : []
+    permissions : []
 })
 
 export const AuthContextProvider = (props) => {
@@ -55,6 +55,6 @@ export const AuthContextProvider = (props) => {
 }
 
 
-//On export le Provider pour l'utiliser une fois. On export le Context par défaut pour l'utiliser
-//Autant de fois qu'on a besoin du context 
+//On export le Provider pour l'utiliser une fois pour wrap l'app. On export le Context par défaut pour l'utiliser
+//Autant de fois qu'on a besoin du context. Pour cela on utilise useContext et on lui passe le context en param
 export default AuthContext
