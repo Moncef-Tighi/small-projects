@@ -5,6 +5,7 @@ import classes from './AuthForm.module.css';
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
+  const [loading, setLoading] = useState(false);
   const email = useRef();
   const password = useRef();
 
@@ -17,6 +18,7 @@ const AuthForm = () => {
     if (isLogin) {
       
     } else {
+      setLoading(true);
       const response = await fetch("login_API_EndPoint", {
         method: "POST",
         headers : {
@@ -28,8 +30,8 @@ const AuthForm = () => {
           returnSecureToken : true
         })
       });
-      if (!response.ok) throw response;
-
+      setLoading(false);
+      if (!response.ok) throw response.error;
     }
 
   }
@@ -39,6 +41,7 @@ const AuthForm = () => {
 
   return (
     <section className={classes.auth}>
+      <h2>{loading ? "Chargement en cours..." : ""}</h2>
       <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
       <form onSubmit={submitHandeler}>
         <div className={classes.control}>
