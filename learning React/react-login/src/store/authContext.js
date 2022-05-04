@@ -1,4 +1,5 @@
 import React from "react"
+import { Navigate } from "react-router-dom";
 import { useState } from "react/cjs/react.production.min";
 
 //Empty context 
@@ -40,8 +41,10 @@ export const AuthContextProvider = (props) => {
         setToken(token);
     } 
 
-    const logoutHandeler = () => setToken(null);
-
+    const logoutHandeler = () => {
+        setToken(null);
+        Navigate('/');
+    } 
     const contextValue = {
         token,
         isLoggedIn : userIsLoggedIn,

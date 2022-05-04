@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useContext, useRef } from 'react/cjs/react.production.min';
-import AuthContext from '../store/authContext';
+import AuthContext from '../../store/authContext';
 
 import classes from './AuthForm.module.css';
 

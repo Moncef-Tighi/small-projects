@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useContext } from 'react/cjs/react.production.min';
-import AuthContext from '../store/authContext';
+import AuthContext from '../../store/authContext';
 
 import classes from './MainNavigation.module.css';
 

@@ -1,7 +1,7 @@
 import classes from './ProfileForm.module.css';
 import { useRef } from 'react';
 import { useContext } from 'react';
-import AuthContext from '../store/authContext';
+import AuthContext from '../../store/authContext';
 
 const ProfileForm = () => {
   const passwordInput = useRef();
