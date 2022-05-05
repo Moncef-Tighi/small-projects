@@ -4,11 +4,16 @@ import classes from './Movie.module.css';
 
 const Movie = (props) => {
   return (
-    <li className={classes.movie}>
-      <h2>{props.title}</h2>
-      <h3>{props.releaseDate}</h3>
-      <p>{props.openingText}</p>
-    </li>
+      <li className={classes.movie}>
+        <div className={classes.image}>
+            <img src={props.image}></img>
+        </div>
+        <div className={classe.aside}>
+          <h2>{props.title}</h2>
+          <p>{props.description}</p>
+          <h3>{props.releaseDate}</h3>
+        </div>
+      </li>
   );
 };
 
