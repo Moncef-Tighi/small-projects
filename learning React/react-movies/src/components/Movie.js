@@ -8,7 +8,7 @@ const Movie = (props) => {
         <div className={classes.image}>
             <img src={props.image}></img>
         </div>
-        <div className={classe.aside}>
+        <div className={classes.aside}>
           <h2>{props.title}</h2>
           <p>{props.description}</p>
           <h3>{props.releaseDate}</h3>

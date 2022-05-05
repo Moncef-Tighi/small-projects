@@ -10,7 +10,7 @@ const fetchMovies= async function() {
   return await request.json();
 }
 
-const movies = [
+const listeMovie = [
   {          
     key: "a",
     title: "Star Wars",
@@ -100,7 +100,7 @@ function App() {
         <button>Afficher les films</button>
       </section>
       <section>
-        <MoviesList movies={movies}/>
+        <MoviesList movies={listeMovie}/>
       </section>
     </React.Fragment>
   );
