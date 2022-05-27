@@ -1,0 +1,10 @@
+pour lancer l'application node.js :
+1 - cd applinode
+2 - npm install
+3 - npm start
+
+
+pour lancer lapplication REACT NATIVE :
+1 - cd applireact
+2 - npm install
+3 - npm start
