@@ -1,21 +1,23 @@
 
-type Combinable = number | string
+const log = function(text:string):void {
+  console.log(text)
+} 
 
-const combine = function(n1:Combinable, n2:Combinable) {
-  if (typeof n1 === "number" && typeof n2==='number') return n1 + n2
-  else return n1.toString() + n2.toString()
+log('test')
+
+let combineValues: (listOfNumbers: number[]) => number;
+
+combineValues = (numbers: number[])=> numbers.reduce((total, number)=> total+=number, 0) 
+const remove = (numbers: number[])=> numbers.reduce((total, number)=> total-=number, 0) 
+// combineValues = add;
+combineValues = console.log()
+
+const operation = function(fonction: (num: number[])=> number, ...numbers: number[]) {
+  return fonction(numbers)
 }
 
+const adding = operation(combineValues, 5, 9, 10)
+const removing = operation(remove, 5, 9, 10)
 
-const number = "aaaah"
-
-console.log(combine(30, 25))
-
-console.log(combine("test", "wait"))
-
-//Litteral Type
-type Role= "admin" | "employé" | "caissier"
-
-let role : Role
-role = "caissier"
-role = "non"
+console.log(adding)
+console.log(removing)
