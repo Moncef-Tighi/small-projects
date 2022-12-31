@@ -1,37 +1,21 @@
-enum Roles {admin = 0, employé = 2, caissié = 4}
 
+type Combinable = number | string
 
-const person: {
-  name : string,
-  age : number,
-  hobbies : string[],
-  random : any[],
-  role : [string, number],
-  roles : Roles,
-} = {
-  name: "Moncef",
-  age : 23,
-  hobbies: ["sports", "cooking"],
-  random: ["gerg", 54, null],
-  role : ["test", 5],
-  roles : Roles.admin
+const combine = function(n1:Combinable, n2:Combinable) {
+  if (typeof n1 === "number" && typeof n2==='number') return n1 + n2
+  else return n1.toString() + n2.toString()
 }
 
-// const person = {
-//   name: "Moncef",
-//   age : 23,
-//   hobbies: ["sports", "cooking"],
-//   random: ["gerg", 54, null],
-//   role : Roles.admin
-// }
 
-console.log(person.age)
+const number = "aaaah"
 
+console.log(combine(30, 25))
 
-// console.log(person.role[0])
-//Problème avec Tupple : Push n'est pas prit en compte
-// person.role.push("aaa")
+console.log(combine("test", "wait"))
 
-for (const hobbie of person.hobbies) {
-  console.log(hobbie)
-}
+//Litteral Type
+type Role= "admin" | "employé" | "caissier"
+
+let role : Role
+role = "caissier"
+role = "non"
