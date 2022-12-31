@@ -8,7 +8,7 @@ import { useState } from "react/cjs/react.production.min";
 //     //On initialise avec des data par défaut pour avoir une meilleure autocomplétion
 //     token : '',
 //     isLoggedIn : '',
-//     login : (token) => {},
+//     login : (token) => {}, 
 //     logout : ()=> {},
 //     permission : []
 // })

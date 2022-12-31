@@ -12,9 +12,19 @@ function App() {
   return (
     <Layout>
       <Routes>
-        <Route path='/' element={<HomePage />}/>
-        <Route path='/auth' element={<AuthPage />}/>
-        <Route path='/profile' element={<UserProfile />} />
+        <Route path='/' element={
+          <Restrict to={["user", "E-Commerce", "Commande", "Manager"]}>
+            <HomePage />
+          </Restrict>
+        }/>
+        <Route path='/auth' element={
+          <AuthPage />
+        }/>
+        <Route path='/profile' element={
+          <Restrict to={["Commande", "Manager"]}>
+            <UserProfile />
+          </Restrict>
+          } />
       </Routes>
     </Layout>
   );

@@ -34,8 +34,8 @@ function ListEmp() {
 
 
     return(
-        <view>
-            <text> liste des employés </text>
+        <View>
+            <Text> liste des employés </Text>
             <SafeAreaView>
                 <FlatList
                     data={items}
@@ -43,7 +43,7 @@ function ListEmp() {
                     keyExtractor={item => item.ID_EMP}
                 />
             </SafeAreaView>
-        </view>
+        </View>
     )
 
 }
